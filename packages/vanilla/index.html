@@ -111,7 +111,7 @@
      *
      */
 
-    const _MOCK_DATA_CSV_PATH_ = '../../data/MOCK_DATA.csv';
+    const _MOCK_DATA_CSV_PATH_ = './MOCK_DATA.csv';
     const _MOCK_DATA_CSV_ = fetch(_MOCK_DATA_CSV_PATH_);
 
     const htmlText = text => `<span>${text}</span>`;
@@ -231,7 +231,7 @@
       const sort = (column) => {
         csvArray.sort(function (a, b) {
           if (column===3)
-            return new Date(b[column]) - new Date(a[column]);
+            return Number(new Date(b[column])) - Number(new Date(a[column]));
           return ('' + a[column]).localeCompare(b[column]);
         })
       };
@@ -292,6 +292,8 @@
   <section>
   <h1>assignment <small>by ryanspice for backbase</small></h1>
   <p>Create an app that is capable of importing the attached MOCK_DATA.csv and visualize it on the screen.</p>
+  <h3>vanilla</h3>
+  <p>This page was created using ES6 and a 'stackoverflow' solution to parsing CSV.</p>
   </section>
   <section>
     <h4>File: <span id="file"></span></h4>

@@ -1,0 +1,21 @@
+
+<div  style="height: 75px;margin-right:12px;" itemSize="20" >
+
+    <li >
+      <span><a href="#" (click)=sort(0)>{{dataTitles[0]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==0, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span><a href="#" (click)=sort(1)>{{dataTitles[1]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==1, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span><a href="#" (click)=sort(2)>{{dataTitles[2]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==2, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span><a href="#" (click)=sort(3)> {{dataTitles[3]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==3, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+    </li>
+
+</div>
+<cdk-virtual-scroll-viewport  style="height: 75vh;min-height:100%;display:block;" itemSize="20" >
+
+    <li *cdkVirtualFor="let n of dataSource">
+      <span>{{n[0]}}</span>
+      <span>{{n[1]}}</span>
+      <span>{{n[2]}}</span>
+      <span> {{n[3]}}</span>
+    </li>
+
+  </cdk-virtual-scroll-viewport>

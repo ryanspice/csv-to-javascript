@@ -1,0 +1,25 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ryanspice",
+  "license": "none",
+  "private": true,
+  "description": "convert a csv to a usable format in javascript using vanilla js and ",
+  "repository": {
+    "type": "git",
+    "directory": "packages/csv-to-javascript"
+  },
+  "files": [
+    "index.js",
+    "csvToJavascript.js",
+    "yarn.lock.cached"
+  ],
+  "bin": {
+    "csv-to-javascript": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1"
+  }
+}
