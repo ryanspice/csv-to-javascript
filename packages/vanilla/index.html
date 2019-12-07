@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>backbase by ryanspice</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Niramit");
+    :root {
+      --alizarin-crimson:#E32636;
+      --sap-green:#0A3410;
+      --van-dyke-brown:#221B15;
+    }
+    body {
+      max-width:1080px;
+      margin:0px auto;
+      background: #FAFAFA;
+      font-family:Niramit;
+    }
+    ol {
+      outline:1px solid;
+      padding-inline-start: 0px;
+    }
+    li span.chevron {
+      margin-top:2px;
+      opacity:0;
+      transition: opacity 200ms;
+      width:100%;
+    }
+    li span.chevron.active {
+      margin-top:4px;
+      opacity:1;
+      transition: opacity 200ms;
+    }
+    li span:hover .chevron {
+      margin-top:4px;
+      opacity:1;
+      transition: opacity 100ms;
+    }
+    li:hover {
+      transition: all 100ms;
+      text-shadow: var(--van-dyke-brown) 0px 0px 2px;
+      cursor:pointer;
+    }
+    li:first-child:hover {
+      transition: all 200ms;
+      text-shadow: none;
+      cursor:pointer
+    }
+    li:first-child span:hover {
+      transition: all 100ms;
+      text-shadow: var(--alizarin-crimson) 0px 0px 2px;
+      cursor:pointer
+    }
+    li {
+      padding-top:2px;
+      padding-bottom:2px;
+      margin:0px auto;
+      list-style: none;
+      width:100%;
+      font-size:1.2rem;
+      transition: all 500ms;
+    }
+    li:first-child{
+      user-select: none;
+      font-size:1.3rem;
+      font-weight: bold;
+    }
+    li a {
+      text-decoration: none;
+      width:100%;
+      display:block;
+    }
+    li a:hover {
+      outline:1px solid rgba(25,25,25,0.01);
+    }
+    li span {
+      width:25%;
+      display:inline-block;
+      text-align:center;
+    }
+    /* chevron stuff :: https://codepen.io/egf/pen/jzylw*/
+    .chevron::before {
+      border-style: solid;
+      border-width: 0.15em 0.15em 0 0;
+      content: '';
+      display: inline-block;
+      height: 0.45em;
+      left: 0.15em;
+      position: relative;
+      top: 0.15em;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 0.45em;
+    }
+    .chevron.right:before {
+      left: 0;
+      transform: rotate(45deg);
+    }
+    .chevron.bottom:before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    .chevron.left:before {
+      left: 0.25em;
+      transform: rotate(-135deg);
+    }
+  </style>
+  <script>
+
+    /**
+     *
+     */
+
+    const _MOCK_DATA_CSV_PATH_ = '../../data/MOCK_DATA.csv';
+    const _MOCK_DATA_CSV_ = fetch(_MOCK_DATA_CSV_PATH_);
+
+    const htmlText = text => `<span>${text}</span>`;
+    const htmlChevron =`<span class="chevron"></span>`;
+    const htmlTitle = (i,t) =>  `<a href="#" onClick="htmlOrderedListTitles(this); render(${i});">${t[i]}<br/>${htmlChevron}</a>`;
+
+    let lastSortByColumn = null;
+    let lastSortByColumnInverted = false;
+
+    /**
+     * https://stackoverflow.com/a/1293163/3349641
+     * https://www.bennadel.com/blog/1504-ask-ben-parsing-csv-strings-with-javascript-exec-regular-expression-command.htm
+     * @param strData
+     * @param strDelimiter
+     * @returns {Array[]}
+     * @constructor
+     */
+
+    // This will parse a delimited string into an array of
+    // arrays. The default delimiter is the comma, but this
+    // can be overriden in the second argument.
+    function CSVToArray( strData, strDelimiter ){
+      // Check to see if the delimiter is defined. If not,
+      // then default to comma.
+      strDelimiter = (strDelimiter || ",");
+      // Create a regular expression to parse the CSV values.
+      var objPattern = new RegExp(
+              (
+                      // Delimiters.
+                      "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+                      // Quoted fields.
+                      "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+                      // Standard fields.
+                      "([^\"\\" + strDelimiter + "\\r\\n]*))"
+              ),
+              "gi"
+      );
+      // Create an array to hold our data. Give the array
+      // a default empty first row.
+      var arrData = [[]];
+      // Create an array to hold our individual pattern
+      // matching groups.
+      var arrMatches = null;
+      // Keep looping over the regular expression matches
+      // until we can no longer find a match.
+      while (arrMatches = objPattern.exec( strData )){
+        // Get the delimiter that was found.
+        var strMatchedDelimiter = arrMatches[ 1 ];
+        // Check to see if the given delimiter has a length
+        // (is not the start of string) and if it matches
+        // field delimiter. If id does not, then we know
+        // that this delimiter is a row delimiter.
+        if (
+                strMatchedDelimiter.length &&
+                (strMatchedDelimiter != strDelimiter)
+        ){
+          // Since we have reached a new row of data,
+          // add an empty row to our data array.
+          arrData.push( [] );
+        }
+        // Now that we have our delimiter out of the way,
+        // let's check to see which kind of value we
+        // captured (quoted or unquoted).
+        if (arrMatches[ 2 ]){
+          // We found a quoted value. When we capture
+          // this value, unescape any double quotes.
+          var strMatchedValue = arrMatches[ 2 ].replace(
+                  new RegExp( "\"\"", "g" ),
+                  "\""
+          );
+        } else {
+          // We found a non-quoted value.
+          var strMatchedValue = arrMatches[ 3 ];
+        }
+        // Now that we have our value string, let's add
+        // it to the data array.
+        arrData[ arrData.length - 1 ].push( strMatchedValue );
+      }
+      // Return the parsed data.
+      return( arrData );
+    }
+
+    /**
+     *
+     */
+
+    window.htmlOrderedListTitles = (e, inverted)=>{
+
+      document.querySelectorAll('.active').forEach(e=>e.className = "chevron");
+      e.children[1].classList.add('active');
+
+      if (!inverted) {
+
+        e.children[1].classList.add('top');
+        e.children[1].classList.remove('bottom');
+      } else {
+
+        e.children[1].classList.add('bottom');
+        e.children[1].classList.remove('top');
+      }
+    }
+
+    /**
+     * run code after dom loads
+     */
+
+    document.addEventListener('DOMContentLoaded', async (newChild, refChild)=>{
+
+      const response = await _MOCK_DATA_CSV_;
+      const responseText = await response.text();
+      document.getElementById(`file`).innerText=_MOCK_DATA_CSV_PATH_;
+      const csvArray = await CSVToArray( responseText || '', ',' );
+      const csvTitles = csvArray.shift();
+      const columnCount = csvTitles.length;
+      const htmlOrderedList = document.getElementsByTagName(`ol`)[0];
+
+      const sort = (column) => {
+        csvArray.sort(function (a, b) {
+          if (column===3)
+            return new Date(b[column]) - new Date(a[column]);
+          return ('' + a[column]).localeCompare(b[column]);
+        })
+      };
+
+      // adjust title html
+      csvTitles[0] = htmlTitle(0,csvTitles)//`<a href="#" onClick="htmlOrderedListTitles(this); render(0);">${csvTitles[0]}<br/>${chevron}</a>`;
+      csvTitles[1] = htmlTitle(1,csvTitles)//`<a href="#" onClick="htmlOrderedListTitles(this); render(1);">${csvTitles[1]}<br/>${chevron}</a>`;
+      csvTitles[2] = htmlTitle(2,csvTitles)//`<a href="#" onClick="htmlOrderedListTitles(this); render(2);">${csvTitles[2]}<br/>${chevron}</a>`;
+      csvTitles[3] = htmlTitle(3,csvTitles)//`<a href="#" onClick="htmlOrderedListTitles(this); render(3);">${csvTitles[3]}<br/>${chevron}</a>`;
+
+      // because for me at least, there is an empty item at the end of the file
+      csvArray.pop();
+
+      // expose the render function globally
+
+      window.render = async (sortByColumn = (lastSortByColumn || 0)) => {
+
+        const templateRow = (row, first)=>{
+          html+="<li>";
+          for(let i = 0; i<columnCount; i++){
+            html+=htmlText(row[i])
+          }
+          html+="</li>";
+        };
+
+        let html = ``;
+        htmlOrderedList.innerHTML = "";
+
+        // sort
+
+        if (lastSortByColumn===sortByColumn){
+          lastSortByColumnInverted = !lastSortByColumnInverted;
+        }
+
+        lastSortByColumn = sortByColumn;
+
+        await sort(sortByColumn);
+
+        if (lastSortByColumnInverted){
+          await csvArray.reverse();
+        }
+
+        // update the html
+        await templateRow(csvTitles);
+        await csvArray.forEach(templateRow);
+
+        /// update the list
+        await htmlOrderedList.insertAdjacentHTML(`afterbegin`,html);
+        await htmlOrderedListTitles(document.querySelectorAll('li span a')[sortByColumn],lastSortByColumnInverted);
+      };
+
+      return render();
+    });
+
+  </script>
+</head>
+<body>
+  <section>
+  <h1>assignment <small>by ryanspice for backbase</small></h1>
+  <p>Create an app that is capable of importing the attached MOCK_DATA.csv and visualize it on the screen.</p>
+  </section>
+  <section>
+    <h4>File: <span id="file"></span></h4>
+  </section>
+  <ol></ol>
+</body>
+</html>
