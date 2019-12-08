@@ -19,9 +19,10 @@
     "angular:build": "cd ./packages/angular && yarn && ng build",
     "angular:test": "cd ./packages/angular && yarn && ng test",
     "react": "cd ./packages/react && npm start",
-    "react:serve": "cd ./packages/react && npm i && npm start --open",
-    "react:build": "cd ./packages/react && npm i && npm build",
-    "react:test": "cd ./packages/react && npm i && npm test",
+    "react:install": "cd ./packages/react && npm i",
+    "react:serve": "cd ./packages/react && npm run-script start --open",
+    "react:build": "cd ./packages/react && npm run-script build",
+    "react:test": "cd ./packages/react && npm test",
     "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {
@@ -31,5 +32,6 @@
     "http-server": "^0.12.0",
     "papaparse": "^5.1.0",
     "path": "^0.12.7"
-  },"bin": "./index.js"
+  },
+  "bin": "./index.js"
 }
