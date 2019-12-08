@@ -7,7 +7,9 @@
   "private": true,
   "description": "convert a csv to a usable format in javascript",
   "repository": {
+
     "type": "git",
+    "url": "https://github.com/ryanspice/csv-to-javascript.git",
     "directory": "packages/csv-to-javascript"
   },
   "files": [
