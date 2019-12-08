@@ -27,14 +27,14 @@ yarn start
 ```
 ## Examples
 
-##### Vanilla ES6 + Vanilla Parse
+#### Vanilla ES6 + Vanilla Parse
 
 ES6 bundle provides an optimized webpack output which will support targeted browsers with features like **classes** and **async/await**.
 ```javascript
 yarn vanilla
 ```
 
-##### Angular + Webpack "csv-loader"
+#### Angular + Webpack "csv-loader"
 
 Built with the latest Angular CLI, this example leverages "csv-loader" and Webpack to load and code split a *.csv file accordingly.
 
@@ -42,7 +42,7 @@ Built with the latest Angular CLI, this example leverages "csv-loader" and Webpa
 yarn angular <command>
 ```
 
-##### React + PapaParse
+#### React + PapaParse
 
 "Papa Parse is the fastest in-browser CSV (or delimited text) parser for JavaScript. It is reliable and correct according to RFC 4180..." ~ https://www.papaparse.com/ -
 https://github.com/mholt/PapaParse
@@ -53,7 +53,7 @@ https://github.com/mholt/PapaParse
 yarn react
 ```
 
-##### Vue + "csv-to-javascript" module
+#### Vue + "csv-to-javascript" module
 
 ```javascript
 yarn vue
