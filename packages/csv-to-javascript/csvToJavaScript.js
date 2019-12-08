@@ -48,13 +48,6 @@ const program = new commander.Command(packageJson.name)
         '--template <path-to-template>',
         'specify a template for the created project'
     )
-    .option('--use-npm')
-    .option('--use-pnp')
-    // TODO: Remove this in next major release.
-    .option(
-        '--typescript',
-        '(this option will be removed in favour of templates in the next major release of create-react-app)'
-    )
     .allowUnknownOption()
     .on('--help', () => {
         console.log(`    Only ${chalk.green('<project-directory>')} is required.`);
@@ -111,24 +104,6 @@ const program = new commander.Command(packageJson.name)
     .parse(process.argv);
 
 
-if (program.info) {
-    console.log(chalk.bold('\nEnvironment Info:'));
-    return envinfo
-        .run(
-            {
-                System: ['OS', 'CPU'],
-                Binaries: ['Node', 'npm', 'Yarn'],
-                Browsers: ['Chrome', 'Edge', 'Internet Explorer', 'Firefox', 'Safari'],
-                npmPackages: ['react', 'react-dom', 'react-scripts'],
-                npmGlobalPackages: ['create-react-app'],
-            },
-            {
-                duplicates: true,
-                showNotFound: true,
-            }
-        )
-        .then(console.log);
-}
 
 
 if (typeof pathToFile === 'undefined') {
@@ -249,8 +224,8 @@ function csvToJavaScript(
     //     process.exit(1);
     // }
 
-    console.log(`Opening ${chalk.green(root)}.`);
-    console.log();
+    console.log(`Opening ${chalk.green(name)}.`);
+    //console.log();
 
     const packageJson = {
         name: appName,
@@ -261,14 +236,7 @@ function csvToJavaScript(
 
 }
 /*
-function shouldUseYarn() {
-    try {
-        execSync('yarnpkg --version', { stdio: 'ignore' });
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
+
 
 function install(root, useYarn, usePnp, dependencies, verbose, isOnline) {
     return new Promise((resolve, reject) => {
