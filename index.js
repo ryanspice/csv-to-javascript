@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-console.log('yay gist')
+const cp = require('child_process');
+cp.execSync('yarn csv-to-javascript --')
+//require('./packages/')
