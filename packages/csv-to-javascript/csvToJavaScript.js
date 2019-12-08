@@ -74,19 +74,7 @@ const program = new commander.Command(packageJson.name)
                 'file:../my-react-scripts'
             )}`
         );
-        console.log(
-            `      - a .tgz archive: ${chalk.green(
-                'https://mysite.com/my-react-scripts-0.8.2.tgz'
-            )}`
-        );
-        console.log(
-            `      - a .tar.gz archive: ${chalk.green(
-                'https://mysite.com/my-react-scripts-0.8.2.tar.gz'
-            )}`
-        );
-        console.log(
-            `    It is not needed unless you specifically want to use a fork.`
-        );
+
         console.log();
         console.log(`    A custom ${chalk.cyan('--template')} can be one of:`);
         console.log(
@@ -141,6 +129,7 @@ if (program.info) {
         )
         .then(console.log);
 }
+
 
 if (typeof pathToFile === 'undefined') {
     console.error('Please specify the project directory:');
