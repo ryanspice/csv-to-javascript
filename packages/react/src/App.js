@@ -157,7 +157,7 @@ const test = [
                  <section>
                      <h3>react</h3>
                      <p>This page was created using "react-window" with the latest "create-react-app" and a
-                         popular parsing library for *.csv files, PapaParse..</p>
+                         popular parsing library for *.csv files, PapaParse.</p>
                  </section>
                  <section>
                      <h4>File: <span id="file">./MOCK_DATA.csv</span></h4>

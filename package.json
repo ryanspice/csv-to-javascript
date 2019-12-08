@@ -14,14 +14,15 @@
     "start": "cd ./packages/angular && yarn && ng serve",
     "csv-to-javascript": "node packages/csv-to-javascript",
     "angular": "cd ./packages/angular && yarn && ng",
+    "angular:install": "cd ./packages/angular && yarn",
     "angular:serve": "cd ./packages/angular && yarn && ng serve --open",
     "angular:build": "cd ./packages/angular && yarn && ng build",
     "angular:test": "cd ./packages/angular && yarn && ng test",
     "react": "cd ./packages/react && npm start",
     "react:install": "cd ./packages/react && npm i",
     "react:serve": "cd ./packages/react && npm start --open",
-    "react:build": "cd ./packages/react && npm build",
-    "react:test": "cd ./packages/react && npm test",
+    "react:build": "cd ./packages/react && npm run-script build",
+    "react:test": "cd ./packages/react && npm run-script test",
     "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {

@@ -10,7 +10,6 @@ Keep in mind the following:
 
 TODO:
 - input file
-- react
 - import function into repos
 - allow options for different parsing
 - refactor
