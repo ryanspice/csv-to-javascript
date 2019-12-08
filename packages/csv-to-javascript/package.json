@@ -1,7 +1,6 @@
 {
   "name": "csv-to-javascript",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "ryanspice",
   "license": "none",
   "private": true,
