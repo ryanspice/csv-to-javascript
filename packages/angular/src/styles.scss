@@ -114,5 +114,6 @@ app-root {
 
   .cdk-virtual-scroll-content-wrapper{
     min-height:30px;
+    height: 75vh;min-height:100%;display:block;
   }
 }

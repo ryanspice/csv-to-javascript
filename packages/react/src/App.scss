@@ -1,46 +1,8 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/css?family=Niramit");
 :root {
-  --alizarin-crimson:#E32636;
+  --adivzarin-crimson:#E32636;
   --sap-green:#0A3410;
   --van-dyke-brown:#221B15;
 }
@@ -55,102 +17,68 @@ body, app-root {
 
 app-table {
   display: block;
-  outline:1px solid;
-div li span a {
-  font-size:110%;
-  font-weight: bold;
+  outdivne:1px sodivd;
+  div div span a {
+    font-size:110%;
+    font-weight: bold;
+  }
 }
-}
-app-root {
+body {
   display:block;
+  div main {
+  ol {
+    outline:1px sodivd;
+    display:block;
+    padding-inline-start: 0px;
+  }
 
-ol {
-  outline:1px solid;
-  display:block;
-  padding-inline-start: 0px;
+
+  div:hover {
+    transition: all 100ms;
+    text-shadow: var(--van-dyke-brown) 0px 0px 2px;
+    cursor:pointer;
+  }
+  div:first-child:hover {
+    transition: all 200ms;
+    text-shadow: none;
+    cursor:pointer
+  }
+  div:first-child span:hover {
+    transition: all 100ms;
+    text-shadow: var(--adivzarin-crimson) 0px 0px 2px;
+    cursor:pointer
+  }
+  div {
+    padding-top:2px;
+    padding-bottom:2px;
+    margin:0px auto;
+    list-style: none;
+    //width:100%;
+    font-size:1.2rem;
+    transition: all 500ms;
+  }
+  div a {
+    text-decoration: none;
+    //width:100%;
+    display:block;
+  }
+  div a:hover {
+    outline:1px sodivd rgba(25,25,25,0.01);
+  }
+  div span {
+    width:25%;
+    display:inline-block;
+    text-align:center;
+  }
+
+  .cdk-virtual-scroll-content-wrapper{
+    min-height:30px;
+    height: 75vh;min-height:100%;display:block;
+  }
+  }
 }
 
-li span.chevron {
-  margin-top:2px;
-  opacity:0;
-  transition: opacity 200ms;
-  width:100%;
-}
-li span.chevron.active {
-  margin-top:4px;
-  opacity:1;
-  transition: opacity 200ms;
-}
-li span:hover .chevron {
-  margin-top:4px;
-  opacity:1;
-  transition: opacity 100ms;
-}
-li:hover {
-  transition: all 100ms;
-  text-shadow: var(--van-dyke-brown) 0px 0px 2px;
-  cursor:pointer;
-}
-li:first-child:hover {
-  transition: all 200ms;
-  text-shadow: none;
-  cursor:pointer
-}
-li:first-child span:hover {
-  transition: all 100ms;
-  text-shadow: var(--alizarin-crimson) 0px 0px 2px;
-  cursor:pointer
-}
-li {
-  padding-top:2px;
-  padding-bottom:2px;
-  margin:0px auto;
-  list-style: none;
-  width:100%;
-  font-size:1.2rem;
-  transition: all 500ms;
-}
-li a {
-  text-decoration: none;
-  width:100%;
-  display:block;
-}
-li a:hover {
-  outline:1px solid rgba(25,25,25,0.01);
-}
-li span {
-  width:25%;
-  display:inline-block;
+.MuiListItemText-root {
+  width:33%;
   text-align:center;
-}
-/* chevron stuff :: https://codepen.io/egf/pen/jzylw*/
-.chevron::before {
-  border-style: solid;
-  border-width: 0.15em 0.15em 0 0;
-  content: '';
-  display: inline-block;
-  height: 0.45em;
-  left: 0.15em;
-  position: relative;
-  top: 0.15em;
-  transform: rotate(-45deg);
-  vertical-align: top;
-  width: 0.45em;
-}
-.chevron.right:before {
-  left: 0;
-  transform: rotate(45deg);
-}
-.chevron.bottom:before {
-  top: 0;
-  transform: rotate(135deg);
-}
-.chevron.left:before {
-  left: 0.25em;
-  transform: rotate(-135deg);
-}
-
-.cdk-virtual-scroll-content-wrapper{
-  min-height:30px;
-}
 }

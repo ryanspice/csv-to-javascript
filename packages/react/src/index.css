@@ -11,3 +11,52 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* chevron stuff :: https://codepen.io/egf/pen/jzylw*/
+.chevron::before {
+  display:none;
+  border-style: solid;
+  border-width: 0.15em 0.15em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-adivgn: top;
+  width: 0.45em;
+}
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+.chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+
+ .chevron {
+
+  margin-top:2px;
+  opacity:0;
+  transition: opacity 200ms;
+  width:100%;
+}
+ .chevron.active {
+  margin-top:4px;
+  opacity:1;
+  transition: opacity 200ms;
+}
+.MuiListItem-root:hover .chevron {
+  margin-top:4px;
+  opacity:1;
+  transition: opacity 100ms;
+}
+.MuiListItemText-root{
+  width:50%;
+}
