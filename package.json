@@ -10,13 +10,13 @@
   ],
   "description": "visualize csv",
   "scripts": {
-    "build": "cd ./packages/angular && ng build",
-    "start": "cd ./packages/angular && ng serve",
+    "build": "cd ./packages/angular && yarn && ng build",
+    "start": "cd ./packages/angular && yarn && ng serve",
     "e2e": "tasks/e2e-simple.sh",
     "csv-to-javascript": "node packages/csv-to-javascript",
-    "angular": "cd ./packages/angular && ng",
-    "angular:serve": "cd ./packages/angular && ng serve --open",
-    "angular:build": "cd ./packages/angular && ng build",
+    "angular": "cd ./packages/angular && yarn && ng",
+    "angular:serve": "cd ./packages/angular && yarn && ng serve --open",
+    "angular:build": "cd ./packages/angular && yarn && ng build",
     "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {
