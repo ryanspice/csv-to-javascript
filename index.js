@@ -14,6 +14,7 @@ cp.execSync('yarn csv-to-javascript --',
 
  */
 //require('./packages/')
+const args = process.argv.slice(2);
 const csvScriptPath = path.join(packagesDir, 'csv-to-javascript', 'index.js');
 cp.execSync(
     `node ${csvScriptPath} ${args.join(' ')} --scripts-version="${scriptsPath}"`,
