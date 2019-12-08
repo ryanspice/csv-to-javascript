@@ -39,21 +39,15 @@ yarn vanilla
 Built with the latest Angular CLI, this example leverages "csv-loader" and Webpack to load and code split a *.csv file accordingly.
 
 ```javascript
-yarn angular <ng command>
-
-yarn angular:build
-yarn angular:serve
+yarn angular <command>
 ```
 
 ##### React + PapaParse
 
-Quote - 
-"Papa Parse is the fastest in-browser CSV (or delimited text) parser for JavaScript. It is reliable and correct according to RFC 4180..."
-
-
+"Papa Parse is the fastest in-browser CSV (or delimited text) parser for JavaScript. It is reliable and correct according to RFC 4180..." ~ https://www.papaparse.com/ -
 https://github.com/mholt/PapaParse
 
-https://www.papaparse.com/
+
 
 ```javascript
 yarn react

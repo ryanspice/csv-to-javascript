@@ -15,14 +15,19 @@
     "csv-to-javascript": "node packages/csv-to-javascript",
     "angular": "cd ./packages/angular && yarn && ng",
     "angular:install": "cd ./packages/angular && yarn",
-    "angular:serve": "cd ./packages/angular && yarn && ng serve --open",
-    "angular:build": "cd ./packages/angular && yarn && ng build",
-    "angular:test": "cd ./packages/angular && yarn && ng test",
+    "angular:serve": "cd ./packages/angular && ng serve --open",
+    "angular:build": "cd ./packages/angular && ng build",
+    "angular:test": "cd ./packages/angular && ng test",
     "react": "cd ./packages/react && npm start",
     "react:install": "cd ./packages/react && npm i",
     "react:serve": "cd ./packages/react && npm start --open",
     "react:build": "cd ./packages/react && npm run-script build",
     "react:test": "cd ./packages/react && npm run-script test",
+    "vue": "cd ./packages/vue && yarn dev",
+    "vue:install": "cd ./packages/vue && yarn",
+    "vue:serve": "cd ./packages/vue && yarn dev --open",
+    "vue:build": "cd ./packages/vue && yarn build",
+    "vue:test": "cd ./packages/vue && yarn test",
     "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {
@@ -31,7 +36,8 @@
     "csv-loader": "^3.0.2",
     "http-server": "^0.12.0",
     "papaparse": "^5.1.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "vue": "^2.6.10"
   },
   "bin": "./index.js"
 }
