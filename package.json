@@ -12,7 +12,6 @@
   "scripts": {
     "build": "cd ./packages/angular && yarn && ng build",
     "start": "cd ./packages/angular && yarn && ng serve",
-    "e2e": "tasks/e2e-simple.sh",
     "csv-to-javascript": "node packages/csv-to-javascript",
     "angular": "cd ./packages/angular && yarn && ng",
     "angular:serve": "cd ./packages/angular && yarn && ng serve --open",
@@ -20,8 +19,8 @@
     "angular:test": "cd ./packages/angular && yarn && ng test",
     "react": "cd ./packages/react && npm start",
     "react:install": "cd ./packages/react && npm i",
-    "react:serve": "cd ./packages/react && npm run-script start --open",
-    "react:build": "cd ./packages/react && npm run-script build",
+    "react:serve": "cd ./packages/react && npm start --open",
+    "react:build": "cd ./packages/react && npm build",
     "react:test": "cd ./packages/react && npm test",
     "vanilla": "http-server ./packages/vanilla -o"
   },
