@@ -40,14 +40,6 @@ const program = new commander.Command(packageJson.name)
     })
     .option('--verbose', 'print additional logs')
     .option('--info', 'print environment debug info')
-    .option(
-        '--scripts-version <alternative-package>',
-        'use a non-standard version of react-scripts'
-    )
-    .option(
-        '--template <path-to-template>',
-        'specify a template for the created project'
-    )
     .allowUnknownOption()
     .on('--help', () => {
         console.log(`    Only ${chalk.green('<project-directory>')} is required.`);
@@ -225,6 +217,7 @@ function csvToJavaScript(
     // }
 
     console.log(`Opening ${chalk.green(name)}.`);
+    console.log(`Saving ${chalk.green(name).replace(".csv",".js")}.`);
     //console.log();
 
     const packageJson = {

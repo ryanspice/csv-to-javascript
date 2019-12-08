@@ -15,10 +15,10 @@ cp.execSync('yarn csv-to-javascript --',
  */
 //require('./packages/')
 const args = process.argv.slice(2).length?process.argv.slice(2):["./MOCK_DATA.csv"];
-const script = "csv-to-javascript";
+const script = process.argv.indexOf('yarn')==-1?"yarn csv-to-javascript":"";
 
 cp.execSync(
-    `yarn ${script} ${args.join(' ')}`,
+    `${script} ${args.join(' ')}`,
     {
         cwd: rootDir,
         stdio: 'inherit',
