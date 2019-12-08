@@ -1,13 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da40dcf1-7611-4340-a916-95b7daea9ec8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="da40dcf1-7611-4340-a916-95b7daea9ec8" name="Default Changelist" comment="eslint, gitignore, pacakge, readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/packages/angular/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/MOCK_DATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/csv-to-javascript/src/MOCK_DATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/csv-to-javascript/src/csvToJavaScript2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/MOCK_DATA.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/bs-config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/helpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/karma-test-shim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/webpack.common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/webpack.dev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/webpack.prod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/config/webpack.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/karma.webpack.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/assets/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/assets/images/angular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/systemjs-angular-loader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/systemjs.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/tsconfig.1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/src/vendor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/papaparse/webpack.config.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,11 +93,6 @@
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/packages/papaparse/index.js">
-                  <provider selected="true" editor-type-id="text-editor" />
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/packages/angular/angular.json">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="580">
@@ -101,11 +125,20 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/packages/angular/src/app/app.component.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="319">
-                      <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+                    <state relative-caret-position="435">
+                      <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/index.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="58">
+                      <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
                     </state>
                   </provider>
                 </entry>
@@ -138,8 +171,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/packages/angular/src/app/table/table.component.ts">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="210">
-                      <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+                    <state relative-caret-position="848">
+                      <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
                     </state>
                   </provider>
                 </entry>
@@ -150,20 +183,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/packages/csv-to-javascript/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="1" selection-start-column="1" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/packages/csv-to-javascript/src/csvToJavaScript2.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2726">
-                  <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+                <state relative-caret-position="464">
+                  <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -171,18 +195,18 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="348">
-                  <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="14" selection-end-column="33" />
+                <state relative-caret-position="638">
+                  <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/readme.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="723">
-                    <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+                  <first_editor relative-caret-position="969">
+                    <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
                     <folding>
                       <element signature="e#4#44#0" expanded="true" />
                     </folding>
@@ -268,7 +292,6 @@
         <option value="$PROJECT_DIR$/packages/csv-to-javascript/csvToJavaScript.js" />
         <option value="$PROJECT_DIR$/packages/vanilla/package.json" />
         <option value="$PROJECT_DIR$/packages/csv-to-javascript/index.html" />
-        <option value="$PROJECT_DIR$/packages/csv-to-javascript/package.json" />
         <option value="$PROJECT_DIR$/packages/papaparse/index.js" />
         <option value="$PROJECT_DIR$/packages/angular/webpack.config.js" />
         <option value="$PROJECT_DIR$/packages/angular/angular.json" />
@@ -286,6 +309,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/packages/csv-to-javascript/package.json" />
+        <option value="$PROJECT_DIR$/index.js" />
       </list>
     </option>
   </component>
@@ -308,6 +333,17 @@
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="csv-to-javascript" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -327,19 +363,19 @@
     <property name="ts.external.directory.path" value="C:\Dev\test\packages\angular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Dev\test\packages\angular" />
-      <recent name="C:\Dev\test\packages" />
-      <recent name="C:\Dev\test\packages\vanilla" />
-      <recent name="C:\Dev\test" />
-      <recent name="C:\Dev\test\packages\csv-to-javascript\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Dev\test\packages\angular\src\app\table" />
       <recent name="C:\Dev\test\packages\angular\src" />
       <recent name="C:\Dev\test\packages\angular\src\assets" />
       <recent name="C:\Dev\test\data" />
       <recent name="C:\Dev\test\packages\csv-to-javascript" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\test\packages\angular" />
+      <recent name="C:\Dev\test\packages" />
+      <recent name="C:\Dev\test\packages\vanilla" />
+      <recent name="C:\Dev\test" />
+      <recent name="C:\Dev\test\packages\csv-to-javascript\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -378,12 +414,34 @@
       <option name="presentableId" value="Default" />
       <updated>1575686560864</updated>
       <workItem from="1575686562033" duration="26787000" />
-      <workItem from="1575757207485" duration="5714000" />
+      <workItem from="1575757207485" duration="10414000" />
     </task>
+    <task id="LOCAL-00001" summary="eslint, gitignore, pacakge, readme">
+      <created>1575765319306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575765319307</updated>
+    </task>
+    <task id="LOCAL-00002" summary="eslint, gitignore, pacakge, readme">
+      <created>1575767526201</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575767526201</updated>
+    </task>
+    <task id="LOCAL-00003" summary="remove main?">
+      <created>1575768070020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575768070020</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32501000" />
+    <option name="totallyTimeSpent" value="37201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="40" width="3853" height="1589" extended-state="0" />
@@ -399,11 +457,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4997205" visible="true" weight="0.32958537" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32994923" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002795" side_tool="true" visible="true" weight="0.32958537" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -416,6 +474,11 @@
         <option value="$PROJECT_DIR$/packages/angular/node_modules/karma/config.tpl.js" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="eslint, gitignore, pacakge, readme" />
+    <MESSAGE value="remove main?" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove main?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -549,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/csv-to-javascript/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/packages/csv-to-javascript/src/csvToJavaScript2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2726">
@@ -611,37 +667,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/packages/angular/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/angular/src/app/table/table.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="723">
-            <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <first_editor relative-caret-position="969">
+            <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
             <folding>
               <element signature="e#4#44#0" expanded="true" />
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/angular/src/app/table/table.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="848">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/csv-to-javascript/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/angular/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
