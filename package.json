@@ -1,5 +1,5 @@
 {
-  "name": "assignment",
+  "name": "csv-to-javascript",
   "version": "1.0.0",
   "main": "index.js",
   "author": "ryanspice",
@@ -17,6 +17,11 @@
     "angular": "cd ./packages/angular && yarn && ng",
     "angular:serve": "cd ./packages/angular && yarn && ng serve --open",
     "angular:build": "cd ./packages/angular && yarn && ng build",
+    "angular:test": "cd ./packages/angular && yarn && ng test",
+    "react": "cd ./packages/react && npm start",
+    "react:serve": "cd ./packages/react && npm i && npm start --open",
+    "react:build": "cd ./packages/react && npm i && npm build",
+    "react:test": "cd ./packages/react && npm i && npm test",
     "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {

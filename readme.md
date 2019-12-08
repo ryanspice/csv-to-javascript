@@ -45,7 +45,15 @@ yarn angular:build
 yarn angular:serve
 ```
 
-##### React + ParaParse
+##### React + PapaParse
+
+Quote - 
+"Papa Parse is the fastest in-browser CSV (or delimited text) parser for JavaScript. It is reliable and correct according to RFC 4180..."
+
+
+https://github.com/mholt/PapaParse
+
+https://www.papaparse.com/
 
 ```javascript
 yarn react
