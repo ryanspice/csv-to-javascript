@@ -5,11 +5,19 @@
   "author": "ryanspice",
   "license": "none",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "description": "visualize csv",
   "scripts": {
+    "build": "cd ./packages/angular && ng build",
+    "start": "cd ./packages/angular && ng serve",
+    "e2e": "tasks/e2e-simple.sh",
     "csv-to-javascript": "node packages/csv-to-javascript",
-    "angular": "cd ./packages/angular && ng serve",
-    "vanilla": "http-server ./packages/vanilla"
+    "angular": "cd ./packages/angular && ng",
+    "angular:serve": "cd ./packages/angular && ng serve --open",
+    "angular:build": "cd ./packages/angular && ng build",
+    "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {
     "chalk": "^3.0.0",
