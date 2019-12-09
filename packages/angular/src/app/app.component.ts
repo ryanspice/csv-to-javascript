@@ -174,7 +174,7 @@ export class AppComponent {
       case PARSER.LOADER:
 
         console.log('Opening loader...');
-        const CSVLoader =(await import("csv-loader")).default;
+        const CSVLoader =(await import("../../../csv-loader")).default;
         parsingTime = await new Date().getTime();
         console.log('Parsing w/loader...',parsingTime-time+"ms");
         csvArray = await eval(await csvLoader(text));

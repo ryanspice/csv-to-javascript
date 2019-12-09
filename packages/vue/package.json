@@ -17,9 +17,10 @@
     "email": "spice.ryan@hotmail.com"
   },
   "dependencies": {
-    "offline-plugin": "^4.8.0",
+    "loader-utils": "^1.2.3",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
+    "offline-plugin": "^4.8.0",
     "promise-polyfill": "^6.0.2"
   },
   "devDependencies": {

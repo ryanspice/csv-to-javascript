@@ -22,6 +22,9 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "commander": "^4.0.1"
+    "commander": "^4.0.1",
+    "csv-loader": "^3.0.2",
+    "papaparse": "^5.1.0",
+    "stream": "^0.0.2"
   }
 }

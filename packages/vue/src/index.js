@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import App from './components/App.vue'
 
-
 Vue.config.productionTip = false;
+
+/**
+ * TODO: implement Vue UI
+ *
+ * this currently implements the vanillia solution however the focus was to load the CSV in a VUE project
+ */
 
 document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
 
@@ -13,7 +18,6 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
 
   const _MOCK_DATA_CSV_PATH_ = './MOCK_DATA.csv';
   const _MOCK_DATA_CSV_ = fetch(_MOCK_DATA_CSV_PATH_);
-  const _OPTION_TYPE_ = 1;
 
   const htmlText = text => `<span>${text}</span>`;
   const htmlChevron =`<span class="chevron"></span>`;
@@ -48,16 +52,14 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
 
   let csvArray;
   let time = new Date().getTime();
-  let parsingTime = 0;
-      console.log('Opening vanilla...');
-      const CSVToArray = (await require("../../csv-to-javascript/csvToArray"));
-      parsingTime = await new Date().getTime();
-      console.log('Parsing w/vanilla...',parsingTime-time+"ms");
-      csvArray = await CSVToArray( responseText || ',' );
-      console.log('Finished Parsing w/vanilla...', (new Date().getTime()-parsingTime) + "ms");
+  console.info('Opening loader...');
 
-
-
+  const csvLoader = await require('../../csv-to-javascript/node_modules/csv-loader');
+  let parsingTime = await new Date().getTime();
+  console.info('Parsing w/loader...',parsingTime-time+"ms");
+  csvArray = await csvLoader( responseText || ',' );
+  csvArray = eval(csvArray);
+  console.info('Finished Parsing w/loader...', (new Date().getTime()-parsingTime) + "ms");
 
   const csvTitles = await csvArray.shift();
   const columnCount = await csvTitles.length;

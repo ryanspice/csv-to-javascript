@@ -1,8 +1,7 @@
 <template>
   <main>
     <section>
-      <h1>csv-to-javascript <small>by ryanspice for backbase</small></h1>
-      <p>Create an app that is capable of importing the attached MOCK_DATA.csv and visualize it on the screen.</p>
+      <h1>csv-to-javascript <small>by ryanspice</small></h1>
       <h3>vue</h3>
       <p>This page was created using 'create-vue-app' and my 'csv-to-javascript' solution enabling a multiple ways to parse CSV.</p>
       <p>'csv-to-javascript' includes support for all of the example's methods of importing *.csv files.</p>
