@@ -49,41 +49,12 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
   let csvArray;
   let time = new Date().getTime();
   let parsingTime = 0;
-  switch(this.parser){
-    case PARSER.DEFAULT:
-
       console.log('Opening vanilla...');
-      const CSVToArray = (await require("../../csv-to-javascript/csvToArray")).default;
+      const CSVToArray = (await require("../../csv-to-javascript/csvToArray"));
       parsingTime = await new Date().getTime();
       console.log('Parsing w/vanilla...',parsingTime-time+"ms");
-      csvArray = await CSVToArray( text || '', ',' );
+      csvArray = await CSVToArray( responseText || ',' );
       console.log('Finished Parsing w/vanilla...', (new Date().getTime()-parsingTime) + "ms");
-      break;
-    case PARSER.PAPA:
-
-      console.log('Opening papa...');
-      /*
-      const CSVToPapa = (await require("../../csv-to-javascript/csvToPapaParse-es6")).default;
-      parsingTime = await new Date().getTime();
-      console.log('Parsing w/papa...',parsingTime-time+"ms");
-      csvArray = await CSVToPapa( text || '', ',' );
-      console.log('Finished Parsing w/papa...', (new Date().getTime()-parsingTime) + "ms");
-
-       */
-      break;
-    case PARSER.LOADER:
-
-      console.log('Opening loader...');
-      const CSVLoader =(await require("../../csv-to-javascript/node_modules/csv-loader")).default;
-      parsingTime = await new Date().getTime();
-      console.log('Parsing w/loader...',parsingTime-time+"ms");
-      csvArray = await eval(await csvLoader(text));
-      console.log('Finished Parsing w/loader...', (new Date().getTime()-parsingTime) + "ms");
-      break;
-    case PARSER.CUSTOM:
-      //possible 4th option
-      break;
-  }
 
 
 
@@ -113,8 +84,8 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
 
   window.render = async (sortByColumn = (lastSortByColumn || 0)) => {
 
-    const templateRow = (row, first)=>{
-      html+=`<li ${first?'id="table-titles"':''}>`;
+    const templateRow = (row, first = false)=>{
+      html+=`<li ${first===true?'id="table-titles"':''}>`;
       for(let i = 0; i<columnCount; i++){
         html+=htmlText(row[i])
       }
