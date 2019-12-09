@@ -32,7 +32,7 @@
     "vanilla": "http-server ./packages/vanilla -o",
     "csv-to-javascript": "node packages/csv-to-javascript",
     "csv-to-javascript:install": "cd ./packages/csv-to-javascript && npm i",
-    "demo": "http-server ./packages/demo -o"
+    "demo": "http-server ./packages/demo -o http://localhost:8080/index.html"
   },
   "dependencies": {
     "chalk": "^3.0.0",
