@@ -138,6 +138,10 @@
     h3 {
       margin-top:0px;
     }
+    h1 {
+
+      font-size:24px;
+    }
     article {
       cursor:pointer;
     }
@@ -151,7 +155,9 @@
       box-shadow: rgba(25,25,25,0.125) 0px 0px 105px;
       border:1px solid rgba(25,25,25,0.155);
     }
-
+    article:first-child {
+      //width:100vw;
+    }
     iframe {  border: 0px solid black; }
     iframe {
       overflow: visible;
@@ -192,27 +198,28 @@
 </script>
 <body>
 <main>
-  <section>
+  <section style="padding:1rem;">
   <h1>csv-to-javascript <small>by ryanspice</small></h1>
   <h3>demo</h3>
   <p>This page uses 'Flexbox' and is to showcase the various examples found in this repo.</p>
   </section>
   <section id="content">
 
-    <a href="https://ryanspice.com/demo/csv-to-javascript/vanilla/" target="_blank">
-      <article >
+    <a href="https://ryanspice.com/demo/csv-to-javascript/angular/" target="_blank">
+      <!--<article style="width:67.8vw;min-width:475px;max-width:980px;">-->
+      <article>
         <div class="loader"></div>
-        <iframe scrolling="no"  src="https://ryanspice.com/demo/csv-to-javascript/vanilla/"   onload="handleClickIframe(this)" ></iframe>
+        <iframe scrolling="no"  src="https://ryanspice.com/demo/csv-to-javascript/angular/"   onload="handleClickIframe(this)"/></iframe>
       </article>
     </a>
 
     <br/>
 
-    <a href="https://ryanspice.com/demo/csv-to-javascript/angular/" target="_blank">
-    <article >
-      <div class="loader"></div>
-      <iframe scrolling="no"  src="https://ryanspice.com/demo/csv-to-javascript/angular/"   onload="handleClickIframe(this)"/></iframe>
-    </article>
+    <a href="https://ryanspice.com/demo/csv-to-javascript/vanilla/" target="_blank">
+      <article >
+        <div class="loader"></div>
+        <iframe scrolling="no"  src="https://ryanspice.com/demo/csv-to-javascript/vanilla/"   onload="handleClickIframe(this)" ></iframe>
+      </article>
     </a>
 
     <br/>
@@ -245,7 +252,10 @@
     @media print{
       *,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important;}
     }
-    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;
+      font-family:monospace;text-align:center;
+      font-size:18px;
+    }
     :after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
     //a{color:#3277b3;}
     a,a:visited{text-decoration:underline;}
@@ -258,7 +268,8 @@
     ::-webkit-scrollbar-track{background:#b8c0c8;}
 
     //main a{color:#88b5dd;}
-    copy{font-family:monospace;text-align:center;display:block!important;padding:2rem;display:block;min-width:320;margin:0 auto;
+    copy{
+      font-family:monospace;text-align:center;display:block!important;padding:2rem;display:block;min-width:320;margin:0 auto;
       }
     copy{font-size:16px;}
     @media screen and (min-width: 420px){
