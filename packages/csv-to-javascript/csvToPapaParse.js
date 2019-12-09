@@ -1,6 +1,6 @@
 const Papa = require("papaparse");
 
-let papa= function(file, options){
+const papa = function(file, options){
     const parser = Papa;
     const defaultOptions = Object.assign({
         delimiter: "",	// auto-detect
@@ -37,3 +37,4 @@ let papa= function(file, options){
     );
     return array;
 };
+module.exports = papa;

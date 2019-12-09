@@ -32,7 +32,7 @@ const _MOCK_DATA_CSV_CANADA_TRAINS_ = "./assets/MOCK_DATA_CANADA_TRAINS.csv";
 })
 export class AppComponent {
 
-  parser:PARSER = PARSER.LOADER;
+  parser:PARSER = PARSER.DEFAULT;
 
   title:string = 'csv-to-javascript';
   test:string;
@@ -174,7 +174,7 @@ export class AppComponent {
       case PARSER.LOADER:
 
         console.log('Opening loader...');
-        const CSVLoader =(await import("../../../csv-loader")).default;
+        const csvLoader =(await import("../../../csv-to-javascript/node_modules/csv-loader")).default;
         parsingTime = await new Date().getTime();
         console.log('Parsing w/loader...',parsingTime-time+"ms");
         csvArray = await eval(await csvLoader(text));
