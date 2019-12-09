@@ -11,10 +11,15 @@ Vue.config.productionTip = false;
 
 document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
 
+  // mount vue
+
   const app = new Vue({
     el: '#app',
     render: h => h(App)
   });
+
+  // custom vanilla mounting soultion
+  // supports mock data and sorting
 
   const _MOCK_DATA_CSV_PATH_ = './MOCK_DATA.csv';
   const _MOCK_DATA_CSV_ = fetch(_MOCK_DATA_CSV_PATH_);

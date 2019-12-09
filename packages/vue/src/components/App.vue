@@ -1,30 +1,31 @@
+
 <template>
+
   <main>
+
     <section>
       <h1>csv-to-javascript <small>by ryanspice</small></h1>
       <h3>vue</h3>
-      <p>This page was created using 'create-vue-app' and my 'csv-to-javascript' solution enabling a multiple ways to parse CSV.</p>
-      <p>'csv-to-javascript' includes support for all of the example's methods of importing *.csv files.</p>
-      <p>e.g. vanilla parse, csv-loader, papaparse, and cli using custom algorithm</p>
+      <p>This page was created using 'create-vue-app' and local package 'csv-to-javascript' enabling a multiple ways to parse CSV.</p>
     </section>
+
     <section>
       <h4>File: <span id="file"></span></h4>
     </section>
+
     <ol></ol>
+
   </main>
+
 </template>
 
 <script>
+
   export default {
     name: 'app'
   }
+
 </script>
-
-<!-- CSS libraries -->
-
-<style src="normalize.css/normalize.css"></style>
-
-<!-- CSS  -->
 
 <style>
   @import url("https://fonts.googleapis.com/css?family=Niramit");
@@ -129,5 +130,3 @@
   }
 
 </style>
-<script>
-

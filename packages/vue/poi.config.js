@@ -6,6 +6,10 @@ module.exports = {
     'src/polyfills.js',
     'src/index.js'
   ],
+  transformModules: ['loader-utils'],
+  output:{
+    minimize:false
+  },
   html: {
     title: pkg.productName,
     description: pkg.description,
