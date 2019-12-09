@@ -1,0 +1,13 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.html",
+  "author": "ryanspice",
+  "license": "none",
+  "private": true,
+  "description": "preview page for code",
+  "repository": {
+    "type": "git",
+    "directory": "packages/demo"
+  }
+}
