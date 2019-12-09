@@ -1,6 +1,6 @@
 {
   "name": "angular",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,11 +21,12 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "csv-loader": "^3.0.2",
     "papaparse": "^5.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "csv-loader": "^3.0.2",
+    "zone.js": "~0.9.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^8.4.1",

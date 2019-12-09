@@ -42,21 +42,28 @@ code {
 
  .chevron {
 
-  margin-top:2px;
   opacity:0;
   transition: opacity 200ms;
   width:100%;
 }
  .chevron.active {
-  margin-top:4px;
   opacity:1;
   transition: opacity 200ms;
 }
 .MuiListItem-root:hover .chevron {
-  margin-top:4px;
   opacity:1;
   transition: opacity 100ms;
 }
 .MuiListItemText-root{
   width:50%;
+    margin-right:0px;
+}
+.MuiListItem-gutters {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+#table-titles {
+    height: 70px;
+    margin-right:17px;
+    font-weight: bold;
 }

@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import App from './components/App.vue'
 
-import CSVToArray from "../../csv-to-javascript/csvToArray";
-import CSVToPapa from "../../csv-to-javascript/csvToPapaParse";
 
 Vue.config.productionTip = false;
 
@@ -49,18 +47,41 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
   document.getElementById(`file`).innerText=_MOCK_DATA_CSV_PATH_;
 
   let csvArray;
-  switch(_OPTION_TYPE_){
-    case 0:
-    csvArray = await CSVToArray( responseText || '', ',' );
-      break;
-    case 1:
-    csvArray = await CSVToPapa( responseText || '', ',' );
-      break;
-    case 2:
+  let time = new Date().getTime();
+  let parsingTime = 0;
+  switch(this.parser){
+    case PARSER.DEFAULT:
 
+      console.log('Opening vanilla...');
+      const CSVToArray = (await require("../../csv-to-javascript/csvToArray")).default;
+      parsingTime = await new Date().getTime();
+      console.log('Parsing w/vanilla...',parsingTime-time+"ms");
+      csvArray = await CSVToArray( text || '', ',' );
+      console.log('Finished Parsing w/vanilla...', (new Date().getTime()-parsingTime) + "ms");
       break;
-    case 3:
+    case PARSER.PAPA:
 
+      console.log('Opening papa...');
+      /*
+      const CSVToPapa = (await require("../../csv-to-javascript/csvToPapaParse-es6")).default;
+      parsingTime = await new Date().getTime();
+      console.log('Parsing w/papa...',parsingTime-time+"ms");
+      csvArray = await CSVToPapa( text || '', ',' );
+      console.log('Finished Parsing w/papa...', (new Date().getTime()-parsingTime) + "ms");
+
+       */
+      break;
+    case PARSER.LOADER:
+
+      console.log('Opening loader...');
+      const CSVLoader =(await require("../../csv-to-javascript/node_modules/csv-loader")).default;
+      parsingTime = await new Date().getTime();
+      console.log('Parsing w/loader...',parsingTime-time+"ms");
+      csvArray = await eval(await csvLoader(text));
+      console.log('Finished Parsing w/loader...', (new Date().getTime()-parsingTime) + "ms");
+      break;
+    case PARSER.CUSTOM:
+      //possible 4th option
       break;
   }
 
@@ -93,7 +114,7 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
   window.render = async (sortByColumn = (lastSortByColumn || 0)) => {
 
     const templateRow = (row, first)=>{
-      html+="<li>";
+      html+=`<li ${first?'id="table-titles"':''}>`;
       for(let i = 0; i<columnCount; i++){
         html+=htmlText(row[i])
       }
@@ -118,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async (newChild, refChild)=> {
     }
 
     // update the html
-    await templateRow(csvTitles);
+    await templateRow(csvTitles, true);
     await csvArray.forEach(templateRow);
 
     /// update the list

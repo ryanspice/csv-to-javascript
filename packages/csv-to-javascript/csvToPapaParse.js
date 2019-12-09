@@ -1,7 +1,7 @@
-const papa = require('./papaparse.js');
+const Papa = require("papaparse");
 
-module.exports = async (file, options) => {
-    const parser = papa;
+let papa= function(file, options){
+    const parser = Papa;
     const defaultOptions = Object.assign({
         delimiter: "",	// auto-detect
         newline: "",	// auto-detect

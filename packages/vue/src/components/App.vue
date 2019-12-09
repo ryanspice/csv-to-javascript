@@ -84,11 +84,6 @@
     font-size:1.2rem;
     transition: all 500ms;
   }
-  li:first-child{
-    user-select: none;
-    font-size:1.3rem;
-    font-weight: bold;
-  }
   li a {
     text-decoration: none;
     width:100%;
@@ -128,6 +123,12 @@
     left: 0.25em;
     transform: rotate(-135deg);
   }
+  #table-titles {
+    height: 70px;
+    margin-right:18px;
+    font-weight: bold;
+  }
+
 </style>
 <script>
 

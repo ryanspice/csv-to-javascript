@@ -1,21 +1,18 @@
 
-<div  style="height: 75px;margin-right:12px;" >
-
+<div id="table-titles" >
     <li >
-      <span><a href="#" (click)=sort(0)>{{dataTitles[0]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==0, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-      <span><a href="#" (click)=sort(1)>{{dataTitles[1]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==1, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-      <span><a href="#" (click)=sort(2)>{{dataTitles[2]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==2, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-      <span><a href="#" (click)=sort(3)> {{dataTitles[3]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==3, 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[0])>{{dataTitles[order[0] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[0], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[1])>{{dataTitles[order[1] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[1], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[2])>{{dataTitles[order[2] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[2], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
+      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[3])> {{dataTitles[order[3]  ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[3], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
     </li>
-
 </div>
-<cdk-virtual-scroll-viewport   itemSize="20" >
 
+<cdk-virtual-scroll-viewport itemSize="20" >
     <li *cdkVirtualFor="let n of dataSource">
-      <span>{{n[0]}}</span>
-      <span>{{n[1]}}</span>
-      <span>{{n[2]}}</span>
-      <span> {{n[3]}}</span>
+      <span alt="n[order[0]]">{{n[order[0]]}}</span>
+      <span alt="n[order[1]]">{{n[order[1]]}}</span>
+      <span alt="n[order[2]]">{{n[order[2]]}}</span>
+      <span alt="n[order[3]]"> {{n[order[3]]}}</span>
     </li>
-
   </cdk-virtual-scroll-viewport>

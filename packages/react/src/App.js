@@ -44,14 +44,6 @@ const test = [
 
         fetch(require('./MOCK_DATA.csv')).then(async (response)=>{
             const data = (await response.text());
-            /*
-            const data = Papa.parse(await response.blob(), {
-                step:(e)=>{
-                    console.log(e.data);
-                }
-            });
-            */
-
 
             await Papa.parse(data, {
                 worker: true,
@@ -133,7 +125,7 @@ const test = [
              );
 
         return (
-            <div>
+            <div id={"table-titles"}>
                 <span><a href="#" onClick={()=>{sort(0)}}>{data[0]}<br/> <span className={`chevron ${this.lastSortByColumn===0?'active':''} ${this.lastSortByColumnInverted?'bottom':''}`}></span></a></span>
                 <span><a href="#" onClick={()=>{sort(1)}}>{data[1]}<br/><span  className={`chevron ${this.lastSortByColumn===1?'active':''} ${this.lastSortByColumnInverted?'bottom':''}`}></span></a></span>
                 <span><a href="#" onClick={()=>{sort(2)}}>{data[2]}<br/><span className={`chevron ${this.lastSortByColumn===2?'active':''} ${this.lastSortByColumnInverted?'bottom':''}`}></span></a></span>

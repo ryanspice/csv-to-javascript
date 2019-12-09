@@ -1,5 +1,6 @@
 
 @import url("https://fonts.googleapis.com/css?family=Niramit");
+
 :root {
   --alizarin-crimson:#E32636;
   --sap-green:#0A3410;
@@ -11,103 +12,9 @@ body {
   background: #FAFAFA;
   font-family:Niramit;
 }
-ol {
-  border-top:1px solid;
-  padding-inline-start: 0px;
-}
-li span.chevron {
-  margin-top:2px;
-  opacity:0;
-  transition: opacity 200ms;
-  width:100%;
-}
-li span.chevron.active {
-  margin-top:4px;
-  opacity:1;
-  transition: opacity 200ms;
-}
-li span:hover .chevron {
-  margin-top:4px;
-  opacity:1;
-  transition: opacity 100ms;
-}
-li:hover {
-  transition: all 100ms;
-  text-shadow: var(--van-dyke-brown) 0px 0px 2px;
-  cursor:pointer;
-}
-li:first-child:hover {
-  transition: all 200ms;
-  text-shadow: none;
-  cursor:pointer
-}
-li:first-child span:hover {
-  transition: all 100ms;
-  text-shadow: var(--alizarin-crimson) 0px 0px 2px;
-  cursor:pointer
-}
-li {
-  padding-top:2px;
-  padding-bottom:2px;
-  margin:0px auto;
-  list-style: none;
-  width:100%;
-  font-size:1.2rem;
-  transition: all 500ms;
-}
-li:first-child{
-  user-select: none;
-  font-size:1.3rem;
-  font-weight: bold;
-}
-li a {
-  text-decoration: none;
-  width:100%;
-  display:block;
-}
-li a:hover {
-  outline:1px solid rgba(25,25,25,0.01);
-}
-li span {
-  width:25%;
-  display:inline-block;
-  text-align:center;
-}
-/* chevron stuff :: https://codepen.io/egf/pen/jzylw*/
-.chevron::before {
-  border-style: solid;
-  border-width: 0.15em 0.15em 0 0;
-  content: '';
-  display: inline-block;
-  height: 0.45em;
-  left: 0.15em;
-  position: relative;
-  top: 0.15em;
-  transform: rotate(-45deg);
-  vertical-align: top;
-  width: 0.45em;
-}
-.chevron.right:before {
-  left: 0;
-  transform: rotate(45deg);
-}
-.chevron.bottom:before {
-  top: 0;
-  transform: rotate(135deg);
-}
-.chevron.left:before {
-  left: 0.25em;
-  transform: rotate(-135deg);
-}
-/*
-.cdk-virtual-scroll-viewport {
-  display:inherit;
-}
 
-.cdk-virtual-scroll-content-wrapper {
-  position: inherit !important;
-}
-*/
-cdk-virtual-scroll-viewport {
-  height: 50vh;min-height:100%;display:block;
+#table-titles {
+  height: 70px;
+  margin-right:18px;
+  font-weight: bold;
 }

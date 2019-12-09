@@ -1,0 +1,36 @@
+ol {
+  border-top:1px solid;
+  padding-inline-start: 0px;
+}
+
+#file {
+  min-width:125px;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  border:none;
+  margin-left:1rem;
+  margin-right:1rem;
+
+  &:focus {
+    outline:none;
+  }
+  cursor:pointer;
+}
+
+
+
+fieldset {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+
+  a {
+    cursor:pointer;
+    user-select: none;
+  }
+}
+
+input[type="radio"], button {
+  cursor:pointer;
+}
