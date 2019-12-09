@@ -1,4 +1,4 @@
-const papa = require('papaparse');
+const papa = require('./papaparse.js');
 
 module.exports = async (file, options) => {
     const parser = papa;

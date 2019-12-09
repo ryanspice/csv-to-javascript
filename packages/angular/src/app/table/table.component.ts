@@ -36,7 +36,7 @@ export class TableComponent implements OnInit {
 
     // https://www.npmjs.com/package/csv-loader
     // @ts-ignore
-    let csv:Array[]= await [...Object.values(await import( 'csv-loader!./MOCK_DATA.csv')) ];
+    let csv:any= await [...Object.values(await import( 'csv-loader!./MOCK_DATA.csv')) ];
 
     // remove empty end of line, not sure why we need 2
     csv.pop();

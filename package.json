@@ -11,10 +11,11 @@
   "description": "visualize csv",
   "scripts": {
     "build": "cd ./packages/angular && yarn && ng build",
-    "start": "cd ./packages/angular && yarn && ng serve",
+    "clean": "cd ./packages/react && rimraf node_modules && cd ../../ && cd ./packages/angular && rimraf node_modules && cd ../../ && cd ./packages/vue && rimraf node_modules",
+    "install": "cd ./packages/react && npm i && cd ../../ && cd ./packages/angular && npm i && cd ../../ && cd ./packages/vue && npm i",
     "csv-to-javascript": "node packages/csv-to-javascript",
-    "angular": "cd ./packages/angular && yarn && ng",
-    "angular:install": "cd ./packages/angular && yarn",
+    "angular": "cd ./packages/angular && ng",
+    "angular:install": "cd ./packages/angular && npm i",
     "angular:serve": "cd ./packages/angular && ng serve --open",
     "angular:build": "cd ./packages/angular && ng build",
     "angular:test": "cd ./packages/angular && ng test",
@@ -23,11 +24,11 @@
     "react:serve": "cd ./packages/react && npm start --open",
     "react:build": "cd ./packages/react && npm run-script build",
     "react:test": "cd ./packages/react && npm run-script test",
-    "vue": "cd ./packages/vue && yarn dev",
-    "vue:install": "cd ./packages/vue && yarn",
-    "vue:serve": "cd ./packages/vue && yarn dev --open",
-    "vue:build": "cd ./packages/vue && yarn build",
-    "vue:test": "cd ./packages/vue && yarn test",
+    "vue": "cd ./packages/vue && npm run-script dev --open",
+    "vue:install": "cd ./packages/vue && npm i",
+    "vue:serve": "cd ./packages/vue && npm run-script dev --open",
+    "vue:build": "cd ./packages/vue && npm run-script build",
+    "vue:test": "cd ./packages/vue && npm run-script test",
     "vanilla": "http-server ./packages/vanilla -o"
   },
   "dependencies": {
@@ -37,6 +38,7 @@
     "http-server": "^0.12.0",
     "papaparse": "^5.1.0",
     "path": "^0.12.7",
+    "rimraf": "^3.0.0",
     "vue": "^2.6.10"
   },
   "bin": "./index.js"

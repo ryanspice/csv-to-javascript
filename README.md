@@ -38,8 +38,16 @@ yarn vanilla
 
 Built with the latest Angular CLI, this example leverages "csv-loader" and Webpack to load and code split a *.csv file accordingly.
 
+"csv-loader" uses PapaParse underneath the hood - https://www.papaparse.com/ -
+                                                  https://github.com/mholt/PapaParse
+
 ```javascript
 yarn angular <command>
+
+yarn angular:install
+yarn angular:serve
+yarn angular:build
+yarn angular:test
 ```
 
 #### React + PapaParse
@@ -51,22 +59,27 @@ https://github.com/mholt/PapaParse
 
 ```javascript
 yarn react
+
+yarn react:install
+yarn react:serve
+yarn react:build
+yarn react:test
 ```
 
 #### Vue + "csv-to-javascript" module
 
 ```javascript
-yarn vue
+yarn vue 
+
+yarn vue:install
+yarn vue:serve
+yarn vue:build
+yarn vue:test
 ```
 
-## Testing
+## E2E Testing
 ```javascript
-yarn <build> --test 
-
-yarn vanilla --test
-yarn angular --test
-yarn react --test
-yarn vue --test
+yarn <build>:test 
 ```
 
 ## Documentation

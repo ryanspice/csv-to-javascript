@@ -9,7 +9,7 @@
       <p>e.g. vanilla parse, csv-loader, papaparse, and cli using custom algorithm</p>
     </section>
     <section>
-      <h4>File: <span id="file"></span>/span></h4>
+      <h4>File: <span id="file"></span></h4>
     </section>
     <ol></ol>
   </main>
