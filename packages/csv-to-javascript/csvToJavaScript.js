@@ -102,7 +102,7 @@ csvToJavaScript(
 
 /**
  *
- * @param name
+ * @param pathToFile
  * @param program
  * @returns {Promise<void>}
  */
@@ -126,6 +126,6 @@ async function csvToJavaScript(
 
     fs.outputFileSync(out, output);
 
-    console.log(`Saving ${chalk.green(name).replace(".csv",".json")}.`);
+    console.log(`Saving ${chalk.green(pathToFile).replace(".csv",".json")}.`);
 
 }
