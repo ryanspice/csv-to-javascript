@@ -1,4 +1,7 @@
-
+/**
+ * csv-to-javascript <path>
+ *  -- help
+ */
 'use strict';
 const chalk = require('chalk');
 const commander = require('commander');
