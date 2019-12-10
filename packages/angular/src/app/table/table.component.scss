@@ -3,17 +3,17 @@ cdk-virtual-scroll-viewport {
   min-height: 100%;
   display: block;
 }
-li span.chevron {
+mat-list-item span.chevron {
   margin-top: 6px;
   opacity: 0;
   transition: opacity 200ms;
   width: 100%;
 }
-li span.chevron.active {
+mat-list-item span.chevron.active {
   opacity: 1;
   transition: opacity 200ms;
 }
-li span:hover .chevron {
+mat-list-item span:hover .chevron {
   opacity: 1;
   transition: opacity 100ms;
 }
@@ -31,7 +31,7 @@ li:first-child span:hover {
   text-shadow: var(--alizarin-crimson) 0px 0px 2px;
   cursor: pointer;
 }
-li {
+mat-list-item {
   text-shadow: rgba(25,25,25,0.25) 0px 0px 2px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -43,21 +43,21 @@ li {
 }
 li:first-child {
 }
-li a {
+mat-list-item a span  {
   text-decoration: none;
   width: 100%;
   display: block;
 }
-li a:hover {
-  outline: 1px solid rgba(25,25,25,0.01);
+mat-list-item a:hover {
+  //outline: 1px solid rgba(25,25,25,0.01);
 }
-li span {
+mat-list-item button {
   width: 25%;
   display: inline-block;
   text-align: center;
   max-height: 37px;
 }
-li {
+mat-list-item {
   span:not(.table-title) {
     white-space: nowrap;
     overflow: hidden;

@@ -170,7 +170,7 @@ function inIframe () {
                  <section>
                      <h1 id="header">csv-to-javascript <small>by ryanspice</small></h1>
                      <h3>react</h3>
-                     <p>This page was created using "react-window" with the latest "create-react-app" and a
+                     <p>This page was created using 'react-window' with the latest 'create-react-app' and a
                          popular parsing library for *.csv files, PapaParse.</p>
                  </section>
                  <section>

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { MatTableModule } from '@angular/material'
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { ScrollDispatchModule } from '@angular/cdk/scrolling';
   ],
   imports: [
     MatTableModule,
+    MatButtonModule,
     ScrollDispatchModule,
-    BrowserModule
+    BrowserModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

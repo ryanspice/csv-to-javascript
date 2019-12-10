@@ -10,8 +10,9 @@ Keep in mind the following:
 
 TODO:
 -readme
--copy
--open button
 
-- stats?
+-open button
+-material?
+
+
 - refactor +  upload / mock buttons across all repos

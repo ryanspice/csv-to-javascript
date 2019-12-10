@@ -1,3 +1,4 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 @import url("https://fonts.googleapis.com/css?family=Niramit");
 :root {
@@ -14,7 +15,7 @@ body {
 }
 #table-titles {
   height: 70px;
-  margin-right:18px;
+  margin-right:1rem;
   font-weight: bold;
 }
 /* chevron stuff :: https://codepen.io/egf/pen/jzylw*/

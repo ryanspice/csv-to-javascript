@@ -6,7 +6,7 @@
     <section>
       <h1 id="header">csv-to-javascript <small>by ryanspice</small></h1>
       <h3>vue</h3>
-      <p>This page was created using 'create-vue-app' and local package 'csv-to-javascript' enabling a multiple ways to parse CSV.</p>
+      <p>This page was created using 'create-vue-app' and local package 'csv-to-javascript'.</p>
     </section>
 
     <section>

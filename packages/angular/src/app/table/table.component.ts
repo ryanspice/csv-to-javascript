@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import {MatListModule} from '@angular/material/list';
 
 /**
  * basic table component, rendering a virtual list based on a set of data

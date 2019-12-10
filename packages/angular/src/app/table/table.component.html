@@ -1,18 +1,18 @@
 
 <div id="table-titles" >
-    <li >
-      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[0])>{{dataTitles[order[0] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[0], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[1])>{{dataTitles[order[1] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[1], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[2])>{{dataTitles[order[2] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[2], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-      <span  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[3])> {{dataTitles[order[3]  ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[3], 'bottom': this.lastSortByColumnInverted}"></span></a></span>
-    </li>
+    <mat-list-item >
+      <button mat-button  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[0])>{{dataTitles[order[0] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[0], 'bottom': this.lastSortByColumnInverted}"></span></a></button>
+      <button mat-button  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[1])>{{dataTitles[order[1] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[1], 'bottom': this.lastSortByColumnInverted}"></span></a></button>
+      <button mat-button  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[2])>{{dataTitles[order[2] ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[2], 'bottom': this.lastSortByColumnInverted}"></span></a></button>
+      <button mat-button  [ngClass] = "{'table-title':true}"><a href="#" (click)=sort(order[3])> {{dataTitles[order[3]  ]}}<span [ngClass]="{'chevron': true, 'active': this.lastSortByColumn==order[3], 'bottom': this.lastSortByColumnInverted}"></span></a></button>
+    </mat-list-item>
 </div>
 
-<cdk-virtual-scroll-viewport itemSize="20" [ngStyle]="{'height':inIframe()?'39vh':''}" >
-    <li *cdkVirtualFor="let n of dataSource">
-      <span alt="n[order[0]]">{{n[order[0]]}}</span>
-      <span alt="n[order[1]]">{{n[order[1]]}}</span>
-      <span alt="n[order[2]]">{{n[order[2]]}}</span>
-      <span alt="n[order[3]]"> {{n[order[3]]}}</span>
-    </li>
+<cdk-virtual-scroll-viewport itemSize="20" [ngStyle]="{'height':inIframe()?'39vh':''}" role="list">
+    <mat-list-item  *cdkVirtualFor="let n of dataSource" matLine role="listitem">
+      <button mat-button><span alt="n[order[0]]">{{n[order[0]]}}</span></button>
+      <button mat-button><span alt="n[order[1]]">{{n[order[1]]}}</span></button>
+      <button mat-button><span alt="n[order[2]]">{{n[order[2]]}}</span></button>
+      <button mat-button><span alt="n[order[3]]"> {{n[order[3]]}}</span></button>
+    </mat-list-item>
   </cdk-virtual-scroll-viewport>
