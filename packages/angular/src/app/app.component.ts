@@ -39,6 +39,8 @@ export class AppComponent {
 
   disabled:boolean = false;
 
+  @ViewChild('filter', {static: false}) filter;
+  @ViewChild('filterSelect', {static: false}) filterSelect;
   @ViewChild('table', {static: false}) table;
   @ViewChild('file', {static: false}) file;
   @ViewChild('mockData', {static: false}) mockData;

@@ -29,6 +29,8 @@ export class TableComponent {
 
   dataTitles:Array<any> = [];
   dataSource:Array<any> = [];
+  dataStore:Array<any> = [];
+
   lastSortByColumn = null;
   lastSortByColumnInverted:boolean = false;
   inIframe = ()=>{
@@ -79,7 +81,7 @@ export class TableComponent {
 
     // @ts-ignore
     this.dataTitles = this.options.titles?csv.shift():['','','','','','']; // remove titles
-    this.dataSource = csv;
+    this.dataSource = this.dataStore = csv;
 
     if (this.options.eof){
       this.dataSource.pop();
@@ -93,13 +95,16 @@ export class TableComponent {
   /**
    * handle sorting, returns new list to dataSource, trys sorting by date if possible
    * @param column
+   * @param filter
    */
+  lastFilter = '';
+  sort = (column:number, filter=null) => {
 
-  sort = (column:number) => {
+    this.dataSource = this.dataStore;
 
     let newDataSet;
     newDataSet = [...this.dataSource.sort(function (a, b) {
-      if (!isNaN(Date.parse(a)))
+      if (column==3 || (!isNaN(Date.parse(a))))
         return Number(new Date(b[column])) - Number(new Date(a[column]));
       return ('' + a[column]).localeCompare(b[column]);
     })];
@@ -109,9 +114,14 @@ export class TableComponent {
     }
 
     this.lastSortByColumn = column;
+    newDataSet = !this.lastSortByColumnInverted?newDataSet:newDataSet.reverse();
 
-    this.dataSource = !this.lastSortByColumnInverted?newDataSet:newDataSet.reverse();
+    if(filter)
+       this.dataSource =  newDataSet.filter((a)=>{return a.indexOf(filter)>-1});
+    else
+      this.dataSource = newDataSet;
 
+    this.lastFilter = filter;
   };
 
 }

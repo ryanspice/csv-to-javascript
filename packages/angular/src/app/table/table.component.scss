@@ -58,7 +58,7 @@ mat-list-item button {
   max-height: 37px;
 }
 mat-list-item {
-  span:not(.table-title) {
+  button:not(.table-title) {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
