@@ -2,6 +2,7 @@
 
 *csv-to-javascript* is a JavaScript package library containing various methods for importing *.csv file. 
 
+npm: https://www.npmjs.com/package/csv-to-javascript
 examples: https://ryanspice.com/demo/csv-to-javascript/
 
 ## Installation
