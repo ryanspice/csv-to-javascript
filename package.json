@@ -4,8 +4,6 @@
   "main": "index.js",
   "author": "ryanspice",
   "license": "unliscenced",
-  "private": true,
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "workspaces": [
     "packages/*"
   ],
