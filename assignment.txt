@@ -9,5 +9,9 @@ Keep in mind the following:
 4. Act as if this code is meant to be production code for a Bank.
 
 TODO:
+-readme
+-copy
+-open button
+
 - stats?
 - refactor +  upload / mock buttons across all repos

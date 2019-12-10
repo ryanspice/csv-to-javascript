@@ -45,11 +45,11 @@ function inIframe () {
             await Papa.parse(data, {
                 worker: true,
                 complete: (results)=> {
-                    console.log("Finished:", this.state.data);
+                    //console.log("Finished:", this.state.data);
                     let finalResults = this.state.data;
                     let titleResults = finalResults.shift();
                     finalResults.pop(); // remove empty at end of file
-                    console.log(titleResults)
+                   // console.log(titleResults)
                      this.setState({
                          titles:titleResults,
                          data: finalResults.sort(),
