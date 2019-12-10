@@ -5,34 +5,31 @@ import './App.scss';
 
 import Papa from 'papaparse';
 
-
-
-/*
-// Convert back to CSV
-var csv = Papa.unparse(data);
-
-// Parse local CSV file
-Papa.parse(file, {
-    complete: function(results) {
-        console.log("Finished:", results.data);
-    }
-});
-
-// Stream big file in worker thread
-Papa.parse(bigFile, {
-    worker: true,
-    step: function(results) {
-        console.log("Row:", results.data);
-    }
-});
-*/
 let hasFetched = false;
 const test = [
 ];
 
+function inIframe () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+/**
+ *
+ */
+
  class App extends React.Component {
+
      lastSortByColumn = 0;
      lastSortByColumnInverted = false;
+
+    /**
+     *
+     */
+
     constructor(){
         super();
         this.list = React.createRef();
@@ -77,6 +74,12 @@ const test = [
         })
     }
 
+    /**
+     *
+     * @param props
+     * @returns {*}
+     */
+
      row = (props) => {
          const { index, style, dataOverride } = props;
          const data = dataOverride || this.state.data[index];
@@ -95,6 +98,12 @@ const test = [
              </ListItem>
          );
      };
+
+    /**
+     *
+     * @param props
+     * @returns {*}
+     */
 
      title = (props) => {
          const { index, style, dataOverride } = props;
@@ -134,19 +143,32 @@ const test = [
         );
 
      };
-    htmlOrderedListTitles = ()=>{
 
+    /**
+     *
+     */
+
+    componentDidMount() {
+        if (!inIframe()) {
+            if (document.getElementById('header'))
+            document.getElementById('header').removeAttribute('hidden');
+        } else {
+            if (document.getElementById('header'))
+            document.getElementById('header').setAttribute('hidden','hidden');
+        }
     }
+
+    /**
+     *
+     * @returns {*}
+     */
+
      render(){
 
          return (
              <main>
                  <section>
-                     <h1>csv-to-javascript <small>by ryanspice</small></h1>
-                     <p>Create an app that is capable of importing the attached MOCK_DATA.csv and visualize it on the
-                         screen.</p>
-                 </section>
-                 <section>
+                     <h1 id="header">csv-to-javascript <small>by ryanspice</small></h1>
                      <h3>react</h3>
                      <p>This page was created using "react-window" with the latest "create-react-app" and a
                          popular parsing library for *.csv files, PapaParse.</p>
@@ -159,13 +181,14 @@ const test = [
                      this.title({index:-1,style:"", dataOverride:this.state.titles})
                      ):null}
                  {this.state.complete?(
-                     <FixedSizeList ref={this.list} height={((window.innerHeight*0.75)-250)} width={"100%"} data={this.state.data} style={{height:"50vh"}} itemSize={30}   itemCount={this.state.data.length}>
+                     <FixedSizeList ref={this.list} height={((window.innerHeight*0.75))} width={"100%"} data={this.state.data} style={{height:"75vh", overflow:inIframe()?"hidden":''}} itemSize={30}   itemCount={this.state.data.length}>
                          {this.row}
                      </FixedSizeList>
                  ):<span></span>}
              </main>
          );
      }
+
  }
 
 export default App;

@@ -29,9 +29,9 @@
     "vue:serve": "cd ./packages/vue && npm run-script dev --open",
     "vue:build": "cd ./packages/vue && npm run-script build",
     "vue:test": "cd ./packages/vue && npm run-script test",
-    "vanilla": "http-server ./packages/vanilla -o",
     "csv-to-javascript": "node packages/csv-to-javascript",
     "csv-to-javascript:install": "cd ./packages/csv-to-javascript && npm i",
+    "vanilla": "http-server ./packages/vanilla -o http://localhost:8080/index.html",
     "demo": "http-server ./packages/demo -o http://localhost:8080/index.html"
   },
   "dependencies": {

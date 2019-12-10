@@ -107,7 +107,7 @@ export class AppComponent {
    */
 
   loadMockData = async (event:Event) => {
-    console.log(this.table);
+    //console.log(this.table);
     await this.resetData();
     _MOCK_DATA_.set(`${_MOCK_DATA_CSV_}`,_MOCK_DATA_CSV_);
     await this.loadUserData(await fetch(_MOCK_DATA_CSV_));

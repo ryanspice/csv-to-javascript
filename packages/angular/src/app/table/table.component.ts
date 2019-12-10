@@ -31,6 +31,25 @@ export class TableComponent {
   lastSortByColumn = null;
   lastSortByColumnInverted:boolean = false;
 
+  constructor() {
+
+    //Remove header inside iframe
+    function inIframe () {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
+    }
+    if (!inIframe()) {
+      document.getElementById('header').removeAttribute('hidden');
+    } else {
+      document.getElementById('header').setAttribute('hidden','hidden');
+    }
+
+  }
+
+
   /**
    * resets data values to null
    */

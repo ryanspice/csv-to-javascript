@@ -1,10 +1,10 @@
 
 @import url("https://fonts.googleapis.com/css?family=Niramit");
-
 :root {
   --alizarin-crimson:#E32636;
   --sap-green:#0A3410;
   --van-dyke-brown:#221B15;
+  --shadow-fang-black:rgba(25,25,25,0.25);
 }
 body {
   max-width:1080px;
@@ -12,9 +12,73 @@ body {
   background: #FAFAFA;
   font-family:Niramit;
 }
-
 #table-titles {
   height: 70px;
   margin-right:18px;
   font-weight: bold;
 }
+/* chevron stuff :: https://codepen.io/egf/pen/jzylw*/
+.chevron::before {
+  border-style: solid;
+  border-width: 0.15em 0.15em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+.chevron.right:before {
+  left: 0;
+  transform: rotate(45deg);
+}
+.chevron.bottom:before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.chevron.left:before {
+  left: 0.25em;
+  transform: rotate(-135deg);
+}
+
+/*! CSS Used from: Embedded */
+a{background-color:transparent;}
+a:active,a:hover{outline:0;}
+@media print{
+  *,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important;}
+}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;
+  font-family:monospace;text-align:center;
+  font-size:16px;
+}
+:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+//a{color:#3277b3;}
+a,a:visited{text-decoration:none;}
+a:focus,a:hover{color:#23527c;cursor:pointer;opacity:0.5;-webkit-transform:scale(1.1) 0.2s ease;transform:scale(1.1) 0.2s ease;animation:bubble 1.0s forwards;-webkit-animation:bubble 1.0s forwards;}
+a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+/*! CSS Used from: Embedded */
+*{-webkit-transition:all 0.3s ease;transition:all 0.3s ease;}
+::-webkit-scrollbar{width:0.5em;height:0.5em;}
+::-webkit-scrollbar-thumb{background:slategray;}
+::-webkit-scrollbar-track{background:#b8c0c8;}
+
+//main a{color:#88b5dd;}
+copy{
+  font-family:monospace;text-align:center;display:block!important;padding:2rem;display:block;min-width:320;margin:0 auto;
+}
+copy{font-size:16px;}
+@media screen and (min-width: 420px){
+  copy{font-size:calc(16px + 2 * ((100vw - 420px) / 300));}
+}
+@media screen and (min-width: 720px){
+  copy{font-size:16px;}
+}
+copy p:first-child{text-align:center;font-family:monospace;display:block!important;padding-top:2rem;padding-bottom:2rem;display:block;min-width:320;max-width:780px;margin:0 auto;
+
+}
+copy img{width:40px;}
+/*! CSS Used from: Embedded */
+//a{color:#ddc1ab!important;}

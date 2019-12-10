@@ -1,13 +1,15 @@
 
 <section>
-  <h1>csv-to-javascript <small>by ryanspice</small></h1>
+
+  <h1 id="header">csv-to-javascript <small>by ryanspice</small></h1>
   <h3>angular</h3>
   <p>This page was created using "cdk-virtual-scroll-viewport" with the latest Angular, Material, and Webpack + 'csv-loader'.</p>
+
 </section>
 
 <section>
 
-  <h4>File: <input #file placeholder="example.csv" type="file" id="file" (change)="loadUserData($event.target.files)" (click)="resetData()">
+  <h4 style="text-align:left;">File: <input #file placeholder="example.csv" type="file" id="file" (change)="loadUserData($event.target.files)" (click)="resetData()">
     <button #mockData type="input" (click)="loadMockData($event)">Load MOCK_DATA.csv</button>
     <button #mockTrains type="input" (click)="loadMockTrainData($event)">Load MOCK_DATA_CANADA_TRAINS.csv</button>
   </h4>
