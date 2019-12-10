@@ -114,7 +114,7 @@ async function csvToJavaScript(
 
     console.log(`Opening ${chalk.green(pathToFile)}.`);
 
-    const file = path.resolve("/packages/csv-to-javascript/"+pathToFile);
+    const file = path.resolve("./packages/csv-to-javascript/"+pathToFile);
     const data = await fs.readFileSync(file, 'utf8', (err, data) => {
         if (err) throw err;
     });
