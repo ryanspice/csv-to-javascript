@@ -181,7 +181,7 @@ function inIframe () {
                      this.title({index:-1,style:"", dataOverride:this.state.titles})
                      ):null}
                  {this.state.complete?(
-                     <FixedSizeList ref={this.list} height={((window.innerHeight*0.75))} width={"100%"} data={this.state.data} style={{height:"75vh", overflow:inIframe()?"hidden":''}} itemSize={30}   itemCount={this.state.data.length}>
+                     <FixedSizeList ref={this.list} height={((window.innerHeight*0.75))} width={"100%"} data={this.state.data} style={{height:inIframe()?"67.3vh":"50vh", overflowX:'hidden',overflowY:inIframe()?"":''}} itemSize={30}   itemCount={this.state.data.length}>
                          {this.row}
                      </FixedSizeList>
                  ):<span></span>}

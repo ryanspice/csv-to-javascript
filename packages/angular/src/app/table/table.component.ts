@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 /**
  * basic table component, rendering a virtual list based on a set of data
  */
@@ -30,18 +31,17 @@ export class TableComponent {
   dataSource:Array<any> = [];
   lastSortByColumn = null;
   lastSortByColumnInverted:boolean = false;
-
+  inIframe = ()=>{
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
   constructor() {
 
     //Remove header inside iframe
-    function inIframe () {
-      try {
-        return window.self !== window.top;
-      } catch (e) {
-        return true;
-      }
-    }
-    if (!inIframe()) {
+    if (!this.inIframe()) {
       document.getElementById('header').removeAttribute('hidden');
     } else {
       document.getElementById('header').setAttribute('hidden','hidden');

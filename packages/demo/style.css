@@ -142,8 +142,8 @@ article {
 }
 article:hover {
     transition: all 200ms;
-//box-shadow: var(--shadow-fang-black) 0px 0px 15px;
-//border:1px solid rgba(25,25,25,0.55);
+    box-shadow: var(--shadow-fang-black) 0px 0px 15px;
+    border:1px solid rgba(25,25,25,0.55);
 }
 article:active {
     transition: all 200ms;
@@ -158,7 +158,7 @@ iframe {
     overflow: visible;
     position: relative;
 
-    pointer-events:none;
+    //pointer-events:none;
     width:100%;
     height:100%;
     overflow-x:hidden;
@@ -193,7 +193,8 @@ a:active,a:hover{outline:0;}
 :after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 //a{color:#3277b3;}
 a,a:visited{text-decoration:underline;}
-a:focus,a:hover{color:#23527c;cursor:pointer;opacity:0.5;-webkit-transform:scale(1.1) 0.2s ease;transform:scale(1.1) 0.2s ease;animation:bubble 1.0s forwards;-webkit-animation:bubble 1.0s forwards;}
+a:focus,a:hover{color:#23527c;cursor:pointer;
+    -webkit-transform:scale(1.1) 0.2s ease;transform:scale(1.1) 0.2s ease;animation:bubble 1.0s forwards;-webkit-animation:bubble 1.0s forwards;}
 a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
 /*! CSS Used from: Embedded */
 *{-webkit-transition:all 0.3s ease;transition:all 0.3s ease;}

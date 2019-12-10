@@ -9,7 +9,7 @@
 
 <section>
 
-  <h4 style="text-align:left;">File: <input #file placeholder="example.csv" type="file" id="file" (change)="loadUserData($event.target.files)" (click)="resetData()">
+  <h4 class="file-title">File: <input #file placeholder="example.csv" type="file" id="file" (change)="loadUserData($event.target.files)" (click)="resetData()">
     <button #mockData type="input" (click)="loadMockData($event)">Load MOCK_DATA.csv</button>
     <button #mockTrains type="input" (click)="loadMockTrainData($event)">Load MOCK_DATA_CANADA_TRAINS.csv</button>
   </h4>
