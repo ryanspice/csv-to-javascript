@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0",
     "commander": "^4.0.1",
     "csv-loader": "^3.0.2",
     "http-server": "^0.12.0",
