@@ -20,7 +20,7 @@
     <select #filterSelect (change)="this.table.sort($event.target.value,this.filter.value);">
       <option *ngFor="let n of this.table.dataTitles" value={{this.table.dataTitles.indexOf(n)}} >{{n}}</option>
     </select>
-    <input #filter type="text" (input)="this.table.sort('',this.filter.value);" />
+    <input #filter type="text" (input)="this.table.sort((this.filterSelect.value),this.filter.value);" />
 
   </h4>
 

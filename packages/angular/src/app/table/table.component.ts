@@ -99,7 +99,7 @@ export class TableComponent {
    */
   lastFilter = '';
   sort = (column:number, filter=null) => {
-
+console.log(column,filter)
     this.dataSource = this.dataStore;
 
     let newDataSet;
@@ -117,7 +117,7 @@ export class TableComponent {
     newDataSet = !this.lastSortByColumnInverted?newDataSet:newDataSet.reverse();
 
     if(filter)
-       this.dataSource =  newDataSet.filter((a)=>{return a.indexOf(filter)>-1});
+       this.dataSource =  newDataSet.filter((a)=>{return String(a).indexOf(filter)>-1});
     else
       this.dataSource = newDataSet;
 
