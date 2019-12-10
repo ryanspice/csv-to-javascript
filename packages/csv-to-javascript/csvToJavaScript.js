@@ -5,64 +5,33 @@ const commander = require('commander');
 const path = require('path');
 const fs = require('fs-extra');
 const csvToArray = require('./csvToArray');
-
-const packageJson = require('./package.json');
+const pkg = require('./package.json');
 
 let pathToFile;
 
 /**
- *
+ * Commander Program
  */
 
-const program = new commander.Command(packageJson.name)
-    .version(packageJson.version)
+const program = new commander.Command(pkg.name)
+    .version(pkg.version)
     .arguments('<project-directory>')
     .usage(`${chalk.green('<project-directory>')} [options]`)
     .action(path => {
         pathToFile = path;
     })
-    .option('--verbose', 'print additional logs')
-    .option('--info', 'print environment debug info')
     .allowUnknownOption()
     .on('--help', () => {
         console.log(`    Only ${chalk.green('<project-directory>')} is required.`);
         console.log();
         console.log(
-            `    A custom ${chalk.cyan('--scripts-version')} can be one of:`
-        );
-        console.log(`      - a specific npm version: ${chalk.green('0.8.2')}`);
-        console.log(`      - a specific npm tag: ${chalk.green('@next')}`);
-        console.log(
-            `      - a custom fork published on npm: ${chalk.green(
-                'my-react-scripts'
+            `      - an exact path: ${chalk.green(
+                'C:/path/file.cvs'
             )}`
         );
         console.log(
-            `      - a local path relative to the current working directory: ${chalk.green(
-                'file:../my-react-scripts'
-            )}`
-        );
-
-        console.log();
-        console.log(`    A custom ${chalk.cyan('--template')} can be one of:`);
-        console.log(
-            `      - a custom fork published on npm: ${chalk.green(
-                'cra-template-typescript'
-            )}`
-        );
-        console.log(
-            `      - a local path relative to the current working directory: ${chalk.green(
-                'file:../my-custom-template'
-            )}`
-        );
-        console.log(
-            `      - a .tgz archive: ${chalk.green(
-                'https://mysite.com/my-custom-template-0.8.2.tgz'
-            )}`
-        );
-        console.log(
-            `      - a .tar.gz archive: ${chalk.green(
-                'https://mysite.com/my-custom-template-0.8.2.tar.gz'
+            `      - exports a : ${chalk.green(
+                '*.json'
             )}`
         );
         console.log();
@@ -71,7 +40,7 @@ const program = new commander.Command(packageJson.name)
         );
         console.log(
             `      ${chalk.cyan(
-                'https://github.com/facebook/create-react-app/issues/new'
+                'https://github.com/ryanspice/csv-to-javascript/issues/new'
             )}`
         );
         console.log();
@@ -92,7 +61,7 @@ if (typeof pathToFile === 'undefined') {
 }
 
 /**
- *
+ * Execute Command
  */
 
 csvToJavaScript(
@@ -101,7 +70,7 @@ csvToJavaScript(
 );
 
 /**
- *
+ * CLI Command
  * @param pathToFile
  * @param program
  * @returns {Promise<void>}
@@ -120,6 +89,7 @@ async function csvToJavaScript(
     });
 
     const out = file.replace(".csv",".json");
+
     let output = csvToArray(data);
     output = JSON.stringify(output)
     //console.log(output);
