@@ -1,6 +1,6 @@
 
 'use strict';
-const cvsToArray = require('cvsToArray');
+const csvToArray = require('csvToArray');
 const chalk = require('chalk');
 const commander = require('commander');
 const path = require('path');
