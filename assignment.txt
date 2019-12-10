@@ -11,5 +11,4 @@ Keep in mind the following:
 TODO:
 -readme
 
--open button
 - refactor +  upload / mock buttons across all repos

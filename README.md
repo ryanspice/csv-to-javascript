@@ -2,13 +2,22 @@
 
 *csv-to-javascript* is a JavaScript package library containing various methods for importing *.csv file. 
 
+examples: https://ryanspice.com/demo/csv-to-javascript/
+
 ## Installation
 
-*csv-to-javascript*'s core purpose is to import *.csv files, but I've provided numerous ways to do this, see examples below. 
+*csv-to-javascript*'s core purpose is to import *.csv files, but I've provided numerous ways to do this, see [examples](https://ryanspice.com/demo/csv-to-javascript/). 
 
 ## Usage
 
-Use *csv-to-javascript* as a standalone command or import it; see examples.
+Use *csv-to-javascript* as a standalone command or import it; see  [examples](https://ryanspice.com/demo/csv-to-javascript/).
+
+```javascript
+yarn csv-to-javascript:install
+//or
+yarn start // installs all repos
+```
+
 
 ```javascript
 import csvToJs from "csv-to-javascript";
@@ -20,26 +29,19 @@ or in command line
 npx csv-to-javascript <path> --json
 ```
 
-demo
+or view all examples in the demo; 
 
 ```javascript
-yarn start
-```
-## Examples
-
-#### Vanilla ES6 + Vanilla Parse
-
-ES6 bundle provides an optimized webpack output which will support targeted browsers with features like **classes** and **async/await**.
-```javascript
-yarn vanilla
+yarn demo
 ```
 
-#### Angular + Webpack "csv-loader"
 
-Built with the latest Angular CLI, this example leverages "csv-loader" and Webpack to load and code split a *.csv file accordingly.
 
-"csv-loader" uses PapaParse underneath the hood - https://www.papaparse.com/ -
-                                                  https://github.com/mholt/PapaParse
+#### Angular + Options
+
+Built with the latest Angular CLI, this example leverages 'csv-loader', 'PapaParse' and our Default method. 
+
+
 
 ```javascript
 yarn angular <command>
@@ -50,10 +52,15 @@ yarn angular:build
 yarn angular:test
 ```
 
+#### Vanilla ES+
+
+ES6 bundle provides an optimized webpack output which will support targeted browsers with features like **classes** and **async/await**.
+```javascript
+yarn vanilla
+```
+
 #### React + PapaParse
 
-"Papa Parse is the fastest in-browser CSV (or delimited text) parser for JavaScript. It is reliable and correct according to RFC 4180..." ~ https://www.papaparse.com/ -
-https://github.com/mholt/PapaParse
 
 
 
@@ -82,11 +89,15 @@ yarn vue:test
 yarn <build>:test 
 ```
 
-## Documentation
-
-N/A
-
+## Notes
+ [examples](https://ryanspice.com/demo/csv-to-javascript/)
+ 
+'csv-loader' uses PapaParse underneath the hood - https://www.papaparse.com/ -
+                                                  https://github.com/mholt/PapaParse
+    
+'Papa Parse' is the fastest in-browser CSV (or delimited text) parser for JavaScript. It is reliable and correct according to RFC 4180..." ~ https://www.papaparse.com/ -
+https://github.com/mholt/PapaParse
 
 ### License
 
-*csv-to-javascript* is [MIT licensed](./LICENSE).
+*csv-to-javascript* is [unlicenced](./LICENSE).
